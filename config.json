@@ -1,0 +1,5 @@
+﻿{
+  "connectionString": "mongodb://justynclark:5FIxcNQ5eOFG3jND@jcmfe-shard-00-00-ur5mi.mongodb.net:27017,jcmfe-shard-00-01-ur5mi.mongodb.net:27017,jcmfe-shard-00-02-ur5mi.mongodb.net:27017/jcmfeDB?ssl=true&replicaSet=jcmfe-shard-0&authSource=admin&retryWrites=true",
+  "secret": "jcmfeDB"
+}
+

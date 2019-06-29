@@ -1,0 +1,103 @@
+{
+  "balance": 2432.1,
+  "paymentMethods": {
+    "cards": [
+      {
+        "brand": "Visa",
+        "last4": "1234",
+        "isDefault": false
+      },
+      {
+        "brand": "Mastercard",
+        "last4": "5678",
+        "isDefault": true
+      }
+    ],
+    "bankAccounts": [
+      {
+        "brand": "Bank of America",
+        "last4": "3230",
+        "isDefault": false
+      }
+    ]
+  },
+  "items": {
+    "item1": {
+      "date": "2018-08-20T03:27:11.859Z",
+      "shipmentReferenceNumber": "ABC123",
+      "pickupLocation": {
+        "name": "Dodger Stadium",
+        "city": "Los Angeles",
+        "state": "CA",
+        "zip": "90012"
+      },
+      "deliveryLocation": {
+        "name": "Universal Studios Hollywood",
+        "city": "Universal City",
+        "state": "CA",
+        "zip": "91608"
+      },
+      "referenceNumber": "PO-27483728374, SO-928934792",
+      "amount": 584.23,
+      "documents": [
+        {
+          "url": "https://google.com",
+          "type": "invoice"
+        },
+        {
+          "url": "https://apple.com",
+          "type": "billOfLading"
+        }
+      ]
+    },
+    "item2": {
+      "date": "2018-08-18T03:27:11.859Z",
+      "shipmentReferenceNumber": "DEF456",
+      "refunded": true,
+      "pickupLocation": {
+        "name": "The Greek Theater",
+        "city": "Los Angeles",
+        "state": "CA",
+        "zip": "90027"
+      },
+      "deliveryLocation": {
+        "name": "The Culver Hotel",
+        "city": "Culver City",
+        "state": "CA",
+        "zip": "90232"
+      },
+      "referenceNumber": "PO-845928347",
+      "amount": 142.86,
+      "documents": [
+        {
+          "url": "https://apple.com",
+          "type": "billOfLading"
+        }
+      ]
+    },
+    "item3": {
+      "date": "2018-08-22T08:27:11.859Z",
+      "shipmentReferenceNumber": "GHI789",
+      "pickupLocation": {
+        "name": "Van Nuys Transit Center",
+        "city": "Van Nuys",
+        "state": "CA",
+        "zip": "91405"
+      },
+      "deliveryLocation": {
+        "name": "Jus Poke",
+        "city": "Redondo Beach",
+        "state": "CA",
+        "zip": "90277"
+      },
+      "referenceNumber": "DO-4234843",
+      "amount": 224.23,
+      "documents": [
+        {
+          "url": "https://google.com",
+          "type": "invoice"
+        }
+      ]
+    }
+  }
+}

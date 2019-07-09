@@ -1,0 +1,59 @@
+# serverless.yml
+
+service: sls
+
+tenant: justynclark
+app: mfeapi
+
+custom:
+  secrets: ${file(env.yml)}
+  customDomain:
+    domainName: api.modernfrontend.io
+    certificateName: '*.modernfrontend.io'
+    basePath: api
+    stage: ${self:provider.stage}
+    createRoute53Record: true
+    endpointType: 'regional'
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  stage: ${self:custom.secrets.NODE_ENV}
+  region: us-east-1
+  cfnRole: arn:aws:iam::223942139849:role/sls-cloudformation
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "cloudformation:DescribeStackResource"
+      Resource: "*"
+  environment:
+    NODE_ENV: ${self:custom.secrets.NODE_ENV}
+    DB: ${self:custom.secrets.DB}
+
+functions:
+  app:
+    handler: index.run
+    events:
+      - http:
+          path: /api/users
+          method: GET
+          cors: true
+      - http:
+          path: /api/items
+          method: GET
+          cors: true
+      - http:
+          path: /api/items/add
+          method: POST
+          cors: true
+      - http:
+          path: /{proxy+}
+          method: ANY
+          cors: true
+
+plugins:
+  - serverless-domain-manager
+  - serverless-offline
+## plugins:
+  ## - serverless-offline
+

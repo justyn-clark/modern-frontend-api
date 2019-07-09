@@ -21,6 +21,7 @@ yarn-debug.log*
 yarn-error.log*
 
 .idea
+
 # Local .terraform directories
 .terraform
 
@@ -30,4 +31,12 @@ yarn-error.log*
 # .tfstate files
 *.tfstate
 *.tfstate.*
+
+# Serverless directories
+.serverless
+
+secrets.json
+env.yml
+.env
+config.json
 

@@ -1,10 +1,12 @@
 /* eslint consistent-return:0 import/order:0 */
 // require('rootpath')();
+require('dotenv').config();
 const express = require('express');
 const app = express();
+const sls = require('serverless-http');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-// const jwt = require('./_helpers/jwt');
+const jwt = require('./helpers/jwt');
 const errorHandler = require('./helpers/error-handler');
 const logger = require('./helpers/logger');
 const argv = require('./helpers/argv');
@@ -23,7 +25,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // use JWT auth to secure the api
-// app.use(jwt());
+app.use(jwt());
 
 // api routes
 app.use('/api/users', require('./api/users/users.controller'));
@@ -63,3 +65,5 @@ app.listen(port, host, async err => {
     logger.appStarted(port, prettyHost);
   }
 });
+
+module.exports.run = sls(app);

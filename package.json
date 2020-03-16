@@ -20,7 +20,7 @@
     "helmet": "^3.18.0",
     "ip": "^1.1.5",
     "jsonwebtoken": "^8.5.1",
-    "minimist": "^1.2.0",
+    "minimist": "^1.2.2",
     "mongoose": "^5.5.10",
     "morgan": "^1.9.1",
     "serverless-http": "^2.0.2"
